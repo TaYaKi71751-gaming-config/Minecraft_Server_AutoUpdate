@@ -8,6 +8,7 @@ do
 		kill -9 $SERVER_PID
 	done < <(printf '%s\n' "${SERVER_PIDS}")
 	cd "${ORIGIN_PWD}/world"
+	rm session.lock
 	git config user.name "Automated Publisher"
 	git config user.email "actions@users.noreply.github.com"
 	git add -A
