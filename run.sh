@@ -21,5 +21,5 @@ do
 	curl --http1.1 -A "Mozilla/5.0" -LsSf "${JAR_URL}" -o server.jar
 	echo "eula=true" > eula.txt
 	java -jar server.jar --nogui &
-	sleep 3600
+	sleep 86400
 done
