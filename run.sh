@@ -8,6 +8,8 @@ do
 		kill -9 $SERVER_PID
 	done < <(printf '%s\n' "${SERVER_PIDS}")
 	cd "${ORIGIN_PWD}/world"
+	git config user.name "Automated Publisher"
+	git config user.email "actions@users.noreply.github.com"
 	git add -A
 	git commit -m "$(date +%s)"
 	git push
