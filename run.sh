@@ -2,7 +2,7 @@
 ORIGIN_PWD="$PWD"
 while true
 do
- SERVER_PIDS="$(ps ax | grep server.jar | cut -d ' ' -f1)"
+ SERVER_PIDS="$(ps ax | grep server.jar | grep -v grep | awk '{print $1}')"
 	while IFS= read -r SERVER_PID
 	do
 		kill -9 $SERVER_PID
