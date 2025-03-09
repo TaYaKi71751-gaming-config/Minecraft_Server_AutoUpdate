@@ -5,7 +5,7 @@ do
  SERVER_PIDS="$(ps ax | grep server.jar | grep -v grep | awk '{print $1}')"
 	while IFS= read -r SERVER_PID
 	do
-		kill -9 $SERVER_PID
+		kill $SERVER_PID
 	done < <(printf '%s\n' "${SERVER_PIDS}")
 	cd "${ORIGIN_PWD}/world"
 	rm session.lock
